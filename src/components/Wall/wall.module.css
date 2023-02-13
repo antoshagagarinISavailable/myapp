@@ -1,0 +1,60 @@
+.wrapper {
+    background: var(--theMainColor);
+    color: var(--theMainFontColor);
+    display: grid;
+    padding: 2vmax;
+
+    border-radius: 10px;
+
+}
+
+p {
+    font-size: 2em;
+}
+
+.userPic {
+    display: block;
+    align-self: center;
+
+    width: 4vmax;
+   
+}
+
+.createNewPostTextarea {
+
+    background: rgba(255, 255, 255, 0.131);
+    border: #5b5b3c 1px solid;
+    border-radius: 20px;
+    padding: 20px;
+    color: #5b5b3c;
+
+    font-size: calc(5px + 1vw);
+
+
+
+
+}
+
+.createNewPost {
+    display: grid;
+    /* align-items: center; */
+    gap: 1em;
+
+    padding: 3vmax;
+    margin: 2vmax;
+
+    grid-template-columns: 5vmax 1fr 5vmax;
+    /* border: #5b5b3c 1px solid; */
+    border-radius: 20px;
+
+}
+
+.publishButton {
+    display: block;
+    align-self: end;
+    background: rgba(255, 255, 255, 0.131);
+    border: #5b5b3c 1px solid;
+    border-radius: 7px;
+    color: #5b5b3c;
+
+}

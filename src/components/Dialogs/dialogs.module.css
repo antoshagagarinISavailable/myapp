@@ -1,0 +1,50 @@
+.wrapper {
+    background: var(--theMainColor);
+    color: var(--theMainFontColor);
+    /* gap: 10vmax; */
+    display: grid;
+    padding: 2vmax 0;
+    grid-template-columns: min-content 3fr;
+    border-radius: 10px;
+}
+
+.dialogItems {
+    display: grid;
+    justify-content: center;
+}
+
+.dialogHistory {
+    border-left: #5b5b3c50 1px solid;
+
+    display: grid;
+    justify-content: start;
+
+}
+
+.interlocutor {
+    padding: 1vmax;
+    display: block;
+    text-decoration: none;
+
+    /* background: rgba(255, 255, 255, 0.131); */
+    border-bottom: #5b5b3c50 1px solid;
+    /* border-radius: 12px; */
+    padding: 10px;
+    margin: 10px;
+    color: #5b5b3c;
+}
+
+.messages {
+
+    display: block;
+    text-decoration: none;
+
+    
+    background: rgba(255, 255, 255, 0.131);
+    border: #5b5b3c50 1px solid;
+    border-radius: 12px;
+    border-bottom-left-radius: 0;
+    padding: 10px;
+    margin: 10px;
+    color: #5b5b3c;
+}

@@ -1,0 +1,41 @@
+.asideWrapper {
+    /* background: var(--theMainColor); */
+    color: var(--theMainFontColor);
+    grid-area: a;
+
+    border-radius: 10px;
+
+
+}
+
+.asideNavList {
+    background: var(--theMainColor);
+    color: var(--theMainFontColor);
+    list-style: none;
+    padding: 20px;
+
+    border-radius: 10px;
+
+}
+
+.asideNavList {
+    margin: 0;
+}
+
+.asideNavList > li {
+    padding: 10px;
+}
+
+.asideLink {
+    text-decoration: none;
+    color: var(--theMainFontColor);
+    
+}
+
+
+
+.asideLinkActive {
+    text-decoration: none;
+    color: #525226;
+    
+}

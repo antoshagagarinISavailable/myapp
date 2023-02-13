@@ -1,0 +1,7 @@
+.wrapper {
+    /* background: var(--theMainColor); */
+    color: var(--theMainFontColor);
+    grid-area: ads;
+    display: grid;
+    gap: 1vmax;
+}
