@@ -6,7 +6,7 @@ import { addPost } from "./state";
 
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
-export const rerenderEntireTree = (state, addPost) => {
+const rerenderEntireTree = (state, addPost) => {
   const root = ReactDOM.createRoot(document.getElementById("root"));
   root.render(
     <BrowserRouter>
@@ -14,3 +14,5 @@ export const rerenderEntireTree = (state, addPost) => {
     </BrowserRouter>
   );
 };
+
+rerenderEntireTree();
