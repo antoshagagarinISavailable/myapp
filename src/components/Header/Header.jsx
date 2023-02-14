@@ -6,16 +6,7 @@ const Header = () => {
     return (
         
         <div className={s.headerWrapper}>
-            <ul>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-            </ul>
+         
         </div>
     )
 }
