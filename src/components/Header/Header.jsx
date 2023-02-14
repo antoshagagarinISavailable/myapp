@@ -7,6 +7,7 @@ const Header = () => {
         
         <div className={s.headerWrapper}>
             <p>hi</p>
+            <p>some text</p>
         </div>
     )
 }
