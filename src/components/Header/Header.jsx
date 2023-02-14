@@ -6,7 +6,7 @@ const Header = () => {
     return (
         
         <div className={s.headerWrapper}>
-
+            <p>hi</p>
         </div>
     )
 }
