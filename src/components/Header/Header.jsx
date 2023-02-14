@@ -6,8 +6,16 @@ const Header = () => {
     return (
         
         <div className={s.headerWrapper}>
-            <p>hi</p>
-            <p>some text</p>
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
         </div>
     )
 }
