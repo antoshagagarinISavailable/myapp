@@ -1,8 +1,10 @@
 let observer = () => {};
 
-let storage = {
-  state: {
+const storage = {
+  data: {
     wall: {
+      newPostText: "",
+
       postsData: [
         { id: "0postsData", message: "Hi, how are you?", likeCounter: "25" },
         { id: "1postsData", message: "Happy new year!", likeCounter: "4" },
@@ -48,22 +50,30 @@ let storage = {
     },
   },
 
-  subscribe(data) {
-    observer = data;
+  subscribe(f) {
+    observer = f;
   },
 
   addPost(el) {
     let newPost = {
-      id: this.state.wall.postsData.length + "postsData",
+      id: this.data.wall.postsData.length + "postsData",
       message: el.current.value,
       likeCounter: 0,
     };
-    this.state.wall.postsData.push(newPost);
+    this.data.wall.postsData.push(newPost);
 
-    el.current.value = "";
+    this.data.wall.newPostText = "";
 
     observer();
   },
+
+  newPostTextUpdate(event) {
+    console.log(event.target.value);
+    this.data.wall.newPostText = event.target.value;
+    observer();
+  },
 };
+
+window.storage = storage;
 
 export default storage;

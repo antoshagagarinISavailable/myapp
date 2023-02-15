@@ -12,6 +12,9 @@ const Wall = (props) => {
     let posts = props.state.postsData.map(el => <Post key={el.id} message={el.message} likeCounter={el.likeCounter}/>)
     let myref = React.createRef()
 
+   
+    
+   
 
   
     return (
@@ -22,7 +25,15 @@ const Wall = (props) => {
 
             <div className={s.createNewPost}>
                 <img className={s.userPic} src="https://www.svgrepo.com/show/68704/boy.svg" alt="user pic" />
-                <textarea ref={myref} className={s.createNewPostTextarea} name="newPost" id="3"  placeholder="What's new?"></textarea>
+                
+                <textarea 
+                 value={props.state.newPostText}
+                 onChange={props.newPostTextUpdate}
+                 ref={myref}
+                 className={s.createNewPostTextarea}
+                 id="3"
+                /> 
+
                 <button  onClick={() => {props.addPost(myref)}} className={s.publishButton}>Post</button>
                
             </div>
