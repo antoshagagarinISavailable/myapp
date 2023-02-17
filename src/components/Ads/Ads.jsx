@@ -5,12 +5,9 @@ import AdsItem from './AdsItem/AdsItem.jsx'
 const Ads = () => {
     return (
         <div className={s.wrapper}>
-            <AdsItem text='Здесь будет реклама'/>
-            <AdsItem text='Здесь будет реклама'/>
-            <AdsItem text='Здесь будет реклама'/>
-            <AdsItem text='Здесь будет реклама'/>
-            <AdsItem text='Здесь будет реклама'/>
-            <AdsItem text='Здесь будет реклама'/>
+            <AdsItem text='ads will be here ads will be here ads will be here'/>
+            <AdsItem text='ads will be here ads will be here ads will be here'/>
+            <AdsItem text='ads will be here ads will be here ads will be here'/>
         </div>
     )
 }

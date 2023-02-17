@@ -4,7 +4,7 @@ import s from './AdsItem.module.css'
 const AdsItem = (props) => {
     return (
         <div className={s.wrapper}>
-            <p>{props.text}</p>
+            <p className="adsText">{props.text}</p>
         </div>
     )
 }

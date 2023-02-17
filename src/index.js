@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import storage from "./state";
+import storage from "./redux/storage";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -11,9 +11,8 @@ const rerenderEntireTree = () => {
   root.render(
     <BrowserRouter>
       <App
-        state={storage}
-        addPost={storage.addPost.bind(storage)}
-        newPostTextUpdate={storage.newPostTextUpdate.bind(storage)}
+        state={storage.getState()}
+        dispatch={storage.dispatch.bind(storage)}
       />
     </BrowserRouter>
   );
@@ -21,4 +20,4 @@ const rerenderEntireTree = () => {
 
 rerenderEntireTree();
 
-storage.subscribe(rerenderEntireTree);
+storage._callSubscriber(rerenderEntireTree);

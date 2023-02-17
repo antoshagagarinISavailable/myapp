@@ -18,7 +18,7 @@ function App(props) {
         <Routes>
           <Route
             path="/dialogs"
-            element={<Dialogs state={props.state.data.dialog} />}
+            element={<Dialogs state={props.state.dialog} />}
           />
 
           <Route
@@ -26,9 +26,8 @@ function App(props) {
             element={
               <Wall
                 userName="antoshagagarin"
-                state={props.state.data.wall}
-                addPost={props.addPost}
-                newPostTextUpdate={props.newPostTextUpdate}
+                state={props.state.wall}
+                dispatch={props.dispatch}
               />
             }
           />

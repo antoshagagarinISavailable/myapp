@@ -1,7 +1,9 @@
+import wallReducer from "./wallReducer";
+
 let observer = () => {};
 
 const storage = {
-  data: {
+  _state: {
     wall: {
       newPostText: "",
 
@@ -50,26 +52,34 @@ const storage = {
     },
   },
 
-  subscribe(f) {
+  getState() {
+    return this._state;
+  },
+
+  _callSubscriber(f) {
     observer = f;
   },
 
-  addPost(el) {
+  _addPost() {
     let newPost = {
-      id: this.data.wall.postsData.length + "postsData",
-      message: el.current.value,
+      id: this.getState().wall.postsData.length + "postsData",
+      message: this._state.wall.newPostText,
       likeCounter: 0,
     };
-    this.data.wall.postsData.push(newPost);
+    this._state.wall.postsData.push(newPost);
 
-    this.data.wall.newPostText = "";
+    this._state.wall.newPostText = "";
 
     observer();
   },
 
-  newPostTextUpdate(event) {
-    console.log(event.target.value);
-    this.data.wall.newPostText = event.target.value;
+  _newPostTextUpdate(text) {
+    this._state.wall.newPostText = text;
+    observer();
+  },
+
+  dispatch(action) {
+    wallReducer(this._state.wall, action);
     observer();
   },
 };
