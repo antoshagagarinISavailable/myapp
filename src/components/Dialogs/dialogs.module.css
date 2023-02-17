@@ -1,19 +1,24 @@
 .wrapper {
     background: var(--theMainColor);
     color: var(--theMainFontColor);
-    /* gap: 10vmax; */
     display: grid;
     padding: 2vmax 0;
-    grid-template-columns: min-content 3fr;
+    grid-template-areas:
+    'dialogItems dialogHistory'
+    'createNewMessage createNewMessage';
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
     border-radius: 10px;
 }
 
 .dialogItems {
     display: grid;
     justify-content: center;
+    grid-area: dialogItems;
 }
 
 .dialogHistory {
+    grid-area: dialogHistory;
     border-left: #5b5b3c50 1px solid;
 
     display: grid;
@@ -47,4 +52,46 @@
     padding: 10px;
     margin: 10px;
     color: #5b5b3c;
+}
+.userPic {
+    display: block;
+    align-self: center;
+
+    width: 4vmax;
+   
+}
+
+.createNewPostTextarea {
+
+    background: rgba(255, 255, 255, 0.131);
+    border: #5b5b3c 1px solid;
+    border-radius: 20px;
+    padding: 20px;
+    color: #5b5b3c;
+
+    font-size: calc(5px + 1vw);
+}
+
+.createNewMessage {
+    grid-area: createNewMessage;
+    display: grid;
+    /* align-items: center; */
+    gap: 1em;
+
+    padding: 3vmax;
+    margin: 2vmax;
+
+    grid-template-columns: 5vmax 1fr 5vmax;
+    /* border: #5b5b3c 1px solid; */
+    border-radius: 20px;
+}
+
+.publishButton {
+    display: block;
+    align-self: end;
+    background: rgba(255, 255, 255, 0.131);
+    border: #5b5b3c 1px solid;
+    border-radius: 7px;
+    color: #5b5b3c;
+    padding: 1vmax;
 }

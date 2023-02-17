@@ -18,7 +18,9 @@ function App(props) {
         <Routes>
           <Route
             path="/dialogs"
-            element={<Dialogs state={props.state.dialog} />}
+            element={
+              <Dialogs state={props.state.dialogs} dispatch={props.dispatch} />
+            }
           />
 
           <Route

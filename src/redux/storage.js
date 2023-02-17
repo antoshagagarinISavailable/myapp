@@ -1,4 +1,7 @@
 import wallReducer from "./wallReducer";
+import dialogReducer from "./dialogsReducer";
+
+let a = "a";
 
 let observer = () => {};
 
@@ -30,6 +33,8 @@ const storage = {
     },
 
     dialog: {
+      newMessageText: "",
+
       dataObj: [
         { id: "0dataObj", name: "Tony" },
         { id: "1dataObj", name: "Alexa" },
@@ -80,6 +85,8 @@ const storage = {
 
   dispatch(action) {
     wallReducer(this._state.wall, action);
+    dialogReducer(this._state.dialog, action);
+
     observer();
   },
 };
