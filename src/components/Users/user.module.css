@@ -1,0 +1,62 @@
+.wrapper {
+  background: var(--theMainColor);
+  color: var(--theMainFontColor);
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  gap: 3vmax;
+  padding: 3vmax;
+  margin: 2vmax;
+  border: #5b5b3c 1px solid;
+  border-radius: 20px;
+
+  position: relative;
+
+  /* overflow: scroll; */
+}
+
+p {
+  font-size: calc(5px + 1vw);
+}
+
+.userpicWrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: min-content min-content;
+  gap: 1vmax;
+  align-items: center;
+  justify-items: center;
+}
+
+.userPic {
+  display: block;
+  width: 6vmax;
+}
+
+.likeIco {
+  display: block;
+  width: 3vmax;
+  object-fit: contain;
+}
+
+.likesWrapper {
+  position: absolute;
+  right: 0.3em;
+  bottom: 0.01em;
+  display: flex;
+}
+
+.postText {
+  padding: 2vmax;
+}
+
+.button {
+  background: rgba(255, 255, 255, 0.131);
+  border: #5b5b3c 1px solid;
+  border-radius: 7px;
+  color: #5b5b3c;
+  padding: 1vmax;
+  width: 10vmax;
+}
+.button:active {
+  background: rgba(255, 255, 255, 0.3);
+}

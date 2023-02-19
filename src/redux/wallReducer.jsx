@@ -24,30 +24,31 @@ let initialState = {
       likeCounter: "99",
     },
   ],
-}
+};
 
 const wallReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case ADD_NEW_POST:
+      return {
+        ...state,
+        postsData: [
+          {
+            id: state.postsData.length + "postsData",
+            message: state.newPostText,
+            likeCounter: 0,
+          },
+          ...state.postsData,
+        ],
+        newPostText: "",
+      };
 
-    switch (action.type) {
-        case ADD_NEW_POST:
-            let newPost = {
-                id: state.postsData.length + "postsData",
-                message: state.newPostText,
-                likeCounter: 0,
-              };
-            state.postsData.unshift(newPost);
-            state.newPostText = "";
-            return state
-        
-        case NEW_POST_TEXT_UPDATE:
-            state.newPostText = action.text;
-            return state
+    case NEW_POST_TEXT_UPDATE:
+      return { ...state, newPostText: action.text };
 
-        default: return state
-    }   
-}
-
-
+    default:
+      return state;
+  }
+};
 
 export const addPostActionCreator = () => {
   return { type: ADD_NEW_POST };
@@ -55,4 +56,4 @@ export const addPostActionCreator = () => {
 export const onPostChangeActionCreator = (text) => {
   return { type: NEW_POST_TEXT_UPDATE, text: text };
 };
-export default wallReducer
+export default wallReducer;

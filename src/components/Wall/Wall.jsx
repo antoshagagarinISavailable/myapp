@@ -1,61 +1,49 @@
 import React from "react";
-import s from './wall.module.css'
-import Post from '../Post/Post.jsx'
-import {addPostActionCreator, onPostChangeActionCreator} from '../../redux/wallReducer'
-
+import s from "./wall.module.css";
+import Post from "../Post/Post.jsx";
 
 const Wall = (props) => {
-    
-    let posts = props.state.postsData.map(el => 
-    <Post key={el.id} message={el.message} 
-    likeCounter={el.likeCounter}/>)
-    
-    let myref = React.createRef()
+  let posts = props.wall.postsData.map((el) => (
+    <Post key={el.id} message={el.message} likeCounter={el.likeCounter} />
+  ));
 
+  let myref = React.createRef();
 
-    const addPost = () => {
-        let action = addPostActionCreator()
-        props.dispatch(action)
-    }
+  const onAddPost = () => {
+    props.addPost();
+  };
 
-    const onPostChange = () => {
-        let text = myref.current.value
-        let action = onPostChangeActionCreator(text)
-        props.dispatch(action)
-    }
-    return (
-        
+  const onPostChange = () => {
+    let text = myref.current.value;
+    props.PostChange(text);
+  };
+  return (
+    <div className={s.wrapper}>
+      <h3>wall:</h3>
 
-        <div className={s.wrapper}>
+      <div className={s.createNewPost}>
+        <img
+          className={s.userPic}
+          src="https://www.svgrepo.com/show/68704/boy.svg"
+          alt="user pic"
+        />
 
-            <h3>{props.userName}'s wall:</h3>
+        <textarea
+          value={props.wall.newPostText}
+          onChange={onPostChange}
+          ref={myref}
+          className={s.createNewPostTextarea}
+          id="3"
+        />
 
-            <div className={s.createNewPost}>
-                <img className={s.userPic} 
-                src="https://www.svgrepo.com/show/68704/boy.svg" 
-                alt="user pic" 
-                />
-                
-                <textarea 
-                 value={props.state.newPostText}
-                 onChange={onPostChange}
-                 ref={myref}
-                 className={s.createNewPostTextarea}
-                 id="3"
-                /> 
+        <button onClick={onAddPost} className={s.publishButton}>
+          Post
+        </button>
+      </div>
 
-                <button  onClick={addPost} 
-                className={s.publishButton}>
-                    Post
-                </button>
-               
-            </div>
+      {posts}
+    </div>
+  );
+};
 
-            {posts}
-            
-        </div>
-    )
-}
-
-
-export default Wall
+export default Wall;
