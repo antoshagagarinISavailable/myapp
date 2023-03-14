@@ -1,97 +1,93 @@
 .wrapper {
-    background: var(--theMainColor);
-    color: var(--theMainFontColor);
-    display: grid;
-    padding: 2vmax 0;
-    grid-template-areas:
-    'dialogItems dialogHistory'
-    'createNewMessage createNewMessage';
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    border-radius: 10px;
+  background: var(--theMainColor);
+  color: var(--theMainFontColor);
+  display: grid;
+  padding: 2vmax 0;
+  grid-template-areas:
+    "dialogItems dialogHistory"
+    "createNewMessage createNewMessage";
+  grid-template-columns: min-content min-content;
+  grid-template-rows: min-content min-content;
+  border-radius: 10px;
 }
 
 .dialogItems {
-    display: grid;
-    justify-content: center;
-    grid-area: dialogItems;
+  display: grid;
+  justify-content: center;
+  grid-area: dialogItems;
 }
 
 .dialogHistory {
-    grid-area: dialogHistory;
-    border-left: #5b5b3c50 1px solid;
+  grid-area: dialogHistory;
+  border-left: #5b5b3c50 1px solid;
 
-    display: grid;
-    justify-content: start;
-
+  display: grid;
+  justify-content: start;
 }
 
 .interlocutor {
-    padding: 1vmax;
-    display: block;
-    text-decoration: none;
+  padding: 0.2em;
+  display: block;
+  text-decoration: none;
 
-    /* background: rgba(255, 255, 255, 0.131); */
-    border-bottom: #5b5b3c50 1px solid;
-    /* border-radius: 12px; */
-    padding: 10px;
-    margin: 10px;
-    color: #5b5b3c;
+  /* background: rgba(255, 255, 255, 0.131); */
+  border-bottom: #5b5b3c50 1px solid;
+  /* border-radius: 12px; */
+  padding: 10px;
+  margin: 10px;
+  color: #5b5b3c;
 }
 
 .messages {
+  display: block;
+  text-decoration: none;
 
-    display: block;
-    text-decoration: none;
-
-    
-    background: rgba(255, 255, 255, 0.131);
-    border: #5b5b3c50 1px solid;
-    border-radius: 12px;
-    border-bottom-left-radius: 0;
-    padding: 10px;
-    margin: 10px;
-    color: #5b5b3c;
+  background: rgba(255, 255, 255, 0.131);
+  border: #5b5b3c50 1px solid;
+  border-radius: 12px;
+  border-bottom-left-radius: 0;
+  padding: 10px;
+  margin: 10px;
+  color: #5b5b3c;
 }
 .userPic {
-    display: block;
-    align-self: center;
+  display: block;
+  align-self: center;
 
-    width: 4vmax;
-   
+  width: 4vmax;
 }
 
 .createNewPostTextarea {
+  background: rgba(255, 255, 255, 0.131);
+  border: #5b5b3c 1px solid;
+  border-radius: 20px;
+  padding: 20px;
+  color: #5b5b3c;
 
-    background: rgba(255, 255, 255, 0.131);
-    border: #5b5b3c 1px solid;
-    border-radius: 20px;
-    padding: 20px;
-    color: #5b5b3c;
-
-    font-size: calc(5px + 1vw);
+  font-size: calc(5px + 1vw);
 }
 
 .createNewMessage {
-    grid-area: createNewMessage;
-    display: grid;
-    /* align-items: center; */
-    gap: 1em;
+  grid-area: createNewMessage;
 
-    padding: 3vmax;
-    margin: 2vmax;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  grid-template-columns: min-content min-content min-content;
+  gap: 1em;
 
-    grid-template-columns: 5vmax 1fr 5vmax;
-    /* border: #5b5b3c 1px solid; */
-    border-radius: 20px;
+  padding: 3vmax;
+  margin: 2vmax;
+
+  border-radius: 20px;
 }
 
 .publishButton {
-    display: block;
-    align-self: end;
-    background: rgba(255, 255, 255, 0.131);
-    border: #5b5b3c 1px solid;
-    border-radius: 7px;
-    color: #5b5b3c;
-    padding: 1vmax;
+  display: block;
+  align-self: end;
+  background: rgba(255, 255, 255, 0.131);
+  border: #5b5b3c 1px solid;
+  border-radius: 7px;
+  color: #5b5b3c;
+  padding: 1vmax;
 }
